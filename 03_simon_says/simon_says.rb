@@ -26,9 +26,21 @@ def first_word sentence
 end
 
 def titleize sentence
-  sentence = sentence.capitalize
-  while
-  if sentence[sentence.index(" ")+1,3]=="and"
+  #sentence.capitalize!
+  words = sentence.split
 
+  #if sentence[sentence.index(" ")+1,3]=="and"
+
+  #end
+  first = true
+  words.map! do |word|
+
+    if (word!="and" && word!="the" && word!="over" || first==true )
+    word.capitalize!
+    first = false
+    end
+    word
   end
+
+  words.join(" ")
 end
